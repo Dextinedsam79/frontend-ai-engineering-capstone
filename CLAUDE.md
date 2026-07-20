@@ -24,3 +24,13 @@ Frontend AI Engineering Internship
 - Review documentation before implementation.
 - Suggest improvements before editing.
 - Keep commits focused and atomic.
+
+## Commit Convention
+
+Use Conventional Commits:
+
+- feat
+- fix
+- docs
+- chore
+- refactor
