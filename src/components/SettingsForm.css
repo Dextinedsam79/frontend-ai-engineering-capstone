@@ -1,0 +1,440 @@
+.settings {
+  --ink: #15231f;
+  --muted: #5c6f68;
+  --line: rgba(21, 35, 31, 0.12);
+  --surface: rgba(255, 252, 248, 0.82);
+  --surface-solid: #fffcf8;
+  --accent: #0f6e56;
+  --accent-soft: #d7efe6;
+  --danger: #a33b2b;
+  --radius: 14px;
+  --shadow: 0 18px 50px rgba(21, 35, 31, 0.08);
+
+  width: min(720px, 100%);
+  margin: 0 auto;
+  animation: settings-rise 0.7s ease both;
+}
+
+.settings__intro {
+  margin-bottom: 2.25rem;
+}
+
+.settings__brand {
+  margin: 0 0 0.85rem;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+  animation: settings-fade 0.8s ease 0.05s both;
+}
+
+.settings__title {
+  margin: 0 0 0.55rem;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  animation: settings-fade 0.8s ease 0.12s both;
+}
+
+.settings__lede {
+  margin: 0;
+  max-width: 34ch;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--muted);
+  animation: settings-fade 0.8s ease 0.2s both;
+}
+
+.settings__form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.settings__section {
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.4rem 1.5rem;
+  box-shadow: var(--shadow);
+  animation: settings-fade 0.75s ease both;
+}
+
+.settings__section:nth-of-type(1) {
+  animation-delay: 0.18s;
+}
+
+.settings__section:nth-of-type(2) {
+  animation-delay: 0.28s;
+}
+
+.settings__section:nth-of-type(3) {
+  animation-delay: 0.38s;
+}
+
+.settings__section-head {
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.settings__section-head h2 {
+  margin: 0 0 0.25rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.settings__section-head p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.settings__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+.field label,
+.theme-field legend {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.field__hint {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-solid);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.98rem;
+  padding: 0.72rem 0.85rem;
+  outline: none;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 5.5rem;
+  line-height: 1.45;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.field input[aria-invalid='true'],
+.field textarea[aria-invalid='true'] {
+  border-color: color-mix(in srgb, var(--danger) 65%, white);
+}
+
+.field__error {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--danger);
+}
+
+.theme-field {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-inline-size: 0;
+}
+
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-solid);
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 560;
+  color: var(--ink);
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.theme-option:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.theme-option:has(input:focus-visible) {
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.theme-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toggle-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.toggle-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0.15rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.toggle-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0.15rem;
+}
+
+.toggle-list__label {
+  margin: 0 0 0.15rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.toggle-list__desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.switch {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.switch__track {
+  width: 2.75rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  background: #d5ddd9;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.switch__track::after {
+  content: '';
+  position: absolute;
+  top: 0.18rem;
+  left: 0.18rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 4px rgba(21, 35, 31, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.switch input:checked + .switch__track {
+  background: var(--accent);
+}
+
+.switch input:checked + .switch__track::after {
+  transform: translateX(1.2rem);
+}
+
+.switch input:focus-visible + .switch__track {
+  outline: 3px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+.settings__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  padding-top: 0.35rem;
+  animation: settings-fade 0.75s ease 0.48s both;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 650;
+  padding: 0.78rem 1.25rem;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 252, 248, 0.7);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #f4fff9;
+  box-shadow: 0 10px 24px rgba(15, 110, 86, 0.22);
+}
+
+.btn--primary:hover {
+  background: #0c5c48;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+.settings__status {
+  min-height: 1.35rem;
+  text-align: right;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.settings__status.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes settings-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes settings-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .settings__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-options {
+    grid-template-columns: 1fr;
+  }
+
+  .settings__actions {
+    flex-direction: column-reverse;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .settings__status {
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .settings,
+  .settings__brand,
+  .settings__title,
+  .settings__lede,
+  .settings__section,
+  .settings__actions {
+    animation: none;
+  }
+
+  .btn,
+  .settings__status,
+  .switch__track,
+  .switch__track::after {
+    transition: none;
+  }
+}
