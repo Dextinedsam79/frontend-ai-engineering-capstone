@@ -1,16 +1,57 @@
-# React + Vite
+# Frontend AI Engineering Capstone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the work produced for the FlyRank AI Engineering Internship.
 
-Currently, two official plugins are available:
+It documents the setup, tooling, and progress for a modern AI-assisted frontend development workflow.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Objective
 
-## React Compiler
+Build a professional frontend engineering environment that leverages AI tools and follows current best practices.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Vite
+
+- Node.js (LTS)
+
+- Git
+
+- VS Code
+
+- Cursor AI
+
+## Getting Started
+
+1. Clone the repository.
+
+2. Install dependencies:
+
+```bash
+
+npm install
+
+```
+
+3. Start the development server:
+
+```bash
+
+npm run dev
+
+```
+
+## Repository Contents
+
+- `README.md` — Project overview and onboarding information.
+
+- `LICENSE` — License terms.
+
+- `.gitignore` — Files excluded from version control.
+
+- `CLAUDE.md` — AI workflow rules and project conventions.
+
+## Notes
+
+This repository is currently in an early stage. Additional features and documentation will be added throughout the internship.
